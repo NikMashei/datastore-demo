@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    gcp:
+      datastore:
+        # fill a project-id in GCP
+        project-id: example-project
+        # fill credentials of a service account
+        credentials:
+          location: classpath:service-account-key.json

@@ -17,8 +17,20 @@ ext {
 }
 
 dependencies {
+    // actuator
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    // webflux
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+    // datastore
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-gcp-starter-data-datastore', version: '1.2.8.RELEASE'
+
+    // lombok
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    // test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
     testImplementation 'org.testcontainers:junit-jupiter'
