@@ -10,6 +10,10 @@ sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://repo.clojars.org'
+        name 'Clojars'
+    }
 }
 
 ext {
@@ -29,6 +33,10 @@ dependencies {
     // lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    // faker
+    implementation 'net.datafaker:datafaker:1.6.0'
+    implementation 'com.lambdaisland:faker:0.2.8'
 
     // test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

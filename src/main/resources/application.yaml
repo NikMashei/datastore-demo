@@ -3,7 +3,7 @@ spring:
     gcp:
       datastore:
         # fill a project-id in GCP
-        project-id: example-project
+        project-id: excellent-tide-369221
         # fill credentials of a service account
         credentials:
-          location: classpath:service-account-key.json
+          location: classpath:excellent-tide-369221-c2c3088ed4f4.json

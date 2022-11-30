@@ -2,7 +2,13 @@ package dev.mashei.datastoredemoproject.domain;
 
 import java.util.List;
 
-public record Team(
-        String name,
-        String email,
-        List<String> members) {}
+public interface Team {
+
+    String name();
+
+    String email();
+
+    List<String> members();
+
+    List<Product> products();
+}

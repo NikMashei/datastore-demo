@@ -1,7 +1,7 @@
 package dev.mashei.datastoredemoproject.api;
 
-import dev.mashei.datastoredemoproject.application.ProjectsPort;
-import dev.mashei.datastoredemoproject.domain.Project;
+import dev.mashei.datastoredemoproject.application.ProductPort;
+import dev.mashei.datastoredemoproject.domain.Product;
 import lombok.RequiredArgsConstructor;
 import org.reactivestreams.Publisher;
 import org.springframework.util.StringUtils;
@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("projects")
+@RequestMapping("products")
 @RequiredArgsConstructor
-public class ProjectApi {
+public class ProductApi {
 
-    private final ProjectsPort projectsPort;
+    private final ProductPort productPort;
 
     @GetMapping()
-    Publisher<Project> getProjectByName(@RequestParam String canonicalName) {
+    Publisher<Product> getProducts(@RequestParam(name = "name", required = false) String canonicalName) {
         if (StringUtils.hasText(canonicalName)) {
-            return projectsPort.findProjectByCanonicalName(canonicalName);
+            return productPort.findByCanonicalName(canonicalName);
         }
-        return projectsPort.getProjects();
+        return productPort.getProducts();
     }
 }
